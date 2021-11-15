@@ -12,7 +12,7 @@ int	check_format(va_list args, char *str, int i)
 	else if (str[i] == 'd' || str[i] == 'i')
 		ft_putnbr_fd(va_arg(args, int), 1);
 	else if (str[i] == 'u')
-		ft_putnbr_fd(va_arg(args, unsigned int), 1);
+		ft_putstr_fd(ft_itoa_u(va_arg(args, unsigned int)), 1);
 	// else if (str[i] == 'x')
 	// else if (str[i] == 'X')
 	// else if (str[i] == '%')
