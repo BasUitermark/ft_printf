@@ -1,12 +1,11 @@
 #include "fpf.h"
 
-int	check_format(va_list args, char *str, int i)
+int	check_format(int out, va_list args, char *str, int i)
 {
 	if (str[i] == 'c')
-		// fpf_char(args, i);
-		// ft_putchar_fd(va_arg(args, int), 1);
+		out += print_char(out, args);
 	else if (str[i] == 's')
-		ft_putstr_fd(va_arg(args, char *), 1);
+		out += print_str(out, args);
 	else if (str[i] == 'p')
 	{
 		ft_putstr_fd("0x", 1);
@@ -25,7 +24,7 @@ int	check_format(va_list args, char *str, int i)
 		"0123456789ABCDEF"), 1);
 	else if (str[i] == '%')
 		ft_putchar_fd('%', 1);
-	return (i);
+	return (out);
 }
 
 int	ft_printf(const char *str, ...)
@@ -43,7 +42,7 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] == '%')
 		{
-			out += check_format(args, (char *)str, i + 1);
+			out = check_format(out, args, (char *)str, i + 1);
 			i++;
 		}
 		else
@@ -51,3 +50,5 @@ int	ft_printf(const char *str, ...)
 	}
 	return (out);
 }
+
+//TODO rewrite put functions to return int
