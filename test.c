@@ -1,8 +1,10 @@
 #include "fpf.h"
 
-int main(int argc, char const *argv[])
+int	main(int argc, char const *argv[])
 {
-	printf("%u\n", -1);
-	printf("%d\n", -1);
-	return 0;
+	int		p;
+
+	p = printf("%d", 2);
+	printf("%d\n", p);
+	// printf("%p\n", 15);
 }
