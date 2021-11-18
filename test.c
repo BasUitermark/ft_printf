@@ -1,10 +1,21 @@
 #include "fpf.h"
 
-int	main(int argc, char const *argv[])
+void	print_test_char(char c)
 {
-	int		p;
+	int	b_write0;
+	int	b_write1;
 
-	p = printf("%d", 2);
-	printf("%d\n", p);
-	// printf("%p\n", 15);
+	b_write0 = 0;
+	b_write1 = 0;
+	if (c)
+	{
+		// b_write0 = printf("%%\n", c);
+		b_write1 = ft_printf("%%\n", c);
+	}
+}
+
+int	main(void)
+{
+	print_test_char('%');
+	return (0);
 }
