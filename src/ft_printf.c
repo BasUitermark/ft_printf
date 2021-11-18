@@ -1,4 +1,4 @@
-#include "fpf.h"
+#include "../fpf.h"
 
 int	check_format(int out, va_list args, char *str, int i)
 {

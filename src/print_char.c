@@ -1,4 +1,4 @@
-#include "fpf.h"
+#include "../fpf.h"
 
 int	print_char(int out, va_list args)
 {
