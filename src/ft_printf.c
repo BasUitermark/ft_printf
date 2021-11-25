@@ -1,4 +1,4 @@
-#include "../fpf.h"
+#include "../ft_printf.h"
 
 int	check_format(va_list args, char *str, int i)
 {
@@ -6,19 +6,22 @@ int	check_format(va_list args, char *str, int i)
 
 	out = 0;
 	if (str[i] == 'c')
-		out = print_char(args);
+		out = ft_putchar_fd(va_arg(args, t_i32), 1);
 	else if (str[i] == 's')
-		out = print_str(args);
+		out = ft_putstr_fd(va_arg(args, char *), 1);
 	else if (str[i] == 'p')
-		out = print_void(args);
+	{
+		out = ft_putstr_fd("0x", 1);
+		out += ft_putnbr_base_fd(va_arg(args, t_u64), 1, HEX_LOWER);
+	}
 	else if (str[i] == 'd' || str[i] == 'i')
-		out = print_digit(args);
+		out = ft_putnbr_fd(va_arg(args, int), 1);
 	else if (str[i] == 'u')
-		out = print_udigit(args);
+		out = ft_putnbr_base_fd(va_arg(args, t_u32), 1, DECIMAL);
 	else if (str[i] == 'x')
-		out = print_hex_lower(args);
+		out = ft_putnbr_base_fd(va_arg(args, t_u32), 1, HEX_LOWER);
 	else if (str[i] == 'X')
-		out = print_hex_upper(args);
+		out = ft_putnbr_base_fd(va_arg(args, t_u32), 1, HEX_UPPER);
 	else if (str[i] == '%')
 		out = write(1, "%", 1);
 	return (out);
