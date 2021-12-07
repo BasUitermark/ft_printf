@@ -48,5 +48,6 @@ int	ft_printf(const char *str, ...)
 		else
 			out += write(1, &str[i], 1);
 	}
+	va_end(args);
 	return (out);
 }

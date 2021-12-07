@@ -10,7 +10,7 @@ OBJS_DIRS	= $(addprefix $(DIR_OBJS)/, $(dir))
 
 #Sourcefiles
 #Note: Only filename needed. "addprefix" and "addsuffix" add path and filetype.
-SRCS		= $(addprefix src/, $(addsuffix .c, \
+SRCS		= $($(addsuffix .c, \
 			ft_printf))
 OBJS		= $(subst $(DIR_SRCS), $(DIR_OBJS), $(SRCS:.c=.o))
 
@@ -25,7 +25,7 @@ MAGENTA = \033[1;35m
 RESET = \033[0m
 
 $(DIR_OBJS)/%.o: $(DIR_SRCS)/%.c
-	@echo "$(MAGENTA)Compiling: $(RESET)$<"
+	@printf "$(MAGENTA)\r Compiling: $(RESET)$<"
 	@mkdir -p $(DIR_OBJS) $(OBJS_DIRS)
 	@$(CC) $(CFLAGS) -c $< -o $@ 
 
