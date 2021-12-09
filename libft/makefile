@@ -71,7 +71,7 @@ SRCS	= $(addprefix src/, $(addsuffix .c, \
 #Object destination for .c files
 OBJS	= $(subst $(DIR_SRCS), $(DIR_OBJS), $(SRCS:.c=.o))
 
-#Variable declerations for compiling and flags
+#Variable declarations for compiling and flags
 CC			= gcc
 CFLAGS		= -Wall -Werror -Wextra
 AR			= ar rcs
@@ -83,9 +83,9 @@ RED = \033[1;31m
 MAGENTA = \033[1;35m
 RESET = \033[0m
 
-#Compile structure with messages
+#Compile structure
 $(DIR_OBJS)/%.o: $(DIR_SRCS)/%.c
-	@printf "$(MAGENTA)\r Compiling: $(RESET)$< \n"
+	@printf "$(MAGENTA)\r Compiling: $(RESET)$<"
 	@mkdir -p $(DIR_OBJS) $(OBJS_DIRS)
 	@$(CC) $(CFLAGS) -c $< -o $@
 

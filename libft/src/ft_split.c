@@ -1,4 +1,4 @@
-#include "../libft.h"
+#include "../include/libft.h"
 
 static t_size	ft_wcount(char const *s, char c)
 {
