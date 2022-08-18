@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="assets/code.png" alt="logo" width="200" height="auto" />
+  <img src="assets/print.png" alt="logo" width="200" height="auto" />
   <h1>FT_PRINTF</h1>
   
   <p>
