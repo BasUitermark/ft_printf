@@ -21,7 +21,7 @@
 
 
 ## :star2: About the Project
-A project made in accordance with the libft project for the Codam Core Curriculum.
+A project made in accordance with the ft_printf project for the Codam Core Curriculum.
 Using write and variable arguments to make a custom printf function. Teaching the basics of bigger function programming.
 
 
